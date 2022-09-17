@@ -1,0 +1,46 @@
+<div class="progress" style="height: 5px;">
+    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+<div class="offset-md-3">
+    <div class="card col-md-5">
+    <form [formGroup]="paymentdetail" (ngSubmit)="savedetail()">
+        <div class="row" style="text-align:center; display:block">
+            <h3>Payment Details</h3>
+        </div>
+      
+    <div class="row">
+        <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" class="form-control" formControlName="cardnumber">
+            <span *ngIf="cardnumber && cardnumber.invalid && cardnumber.touched" class="error">Please enter Card Number</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Name on Card</label>
+            <input type="text" class="form-control" formControlName="nameoncard">
+            <span *ngIf="nameoncard && nameoncard.invalid && nameoncard.touched" class="error">Please enter the Name on card</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Expiry Date</label>
+            <input type="text" class="form-control" formControlName="expirydate">
+            <span *ngIf="expirydate && expirydate.invalid && expirydate.touched" class="error">Please enter Expiry Date of Card</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Security Code</label>
+            <input type="text" class="form-control" formControlName="pin">
+            <span *ngIf="pin && pin.invalid && pin.touched" class="error">Please enter Security Code</span>
+        </div>
+    </div>    
+    <br>
+    </form>
+    <button type="submit" [disabled]="paymentdetail.invalid" (click)="savedetail()" class="btn btn-primary">Continue</button>
+    </div>
+    </div>

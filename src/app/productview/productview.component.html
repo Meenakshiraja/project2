@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card-image">
+        <br><br>
+        <mdb-carousel [controls]="true" [indicators]="true">
+            <mdb-carousel-item>
+              <img
+                src="{{product[0].image}}"
+                alt="..."
+              />
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img
+                src="{{product[0].image1}}"
+                alt="..."
+              />
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img
+                src="{{product[0].image2}}"
+                alt="..."
+              />
+            </mdb-carousel-item>
+          </mdb-carousel>
+        </div>
+    </div>
+          <div class="container">
+            <div class="card-image">
+        <br><br>
+        <h4>{{product[0].title}}</h4>
+        <p><b><span style="font-size: 25px;">Rs. {{product[0].price}}</span></b>&nbsp;&nbsp; IN STOCK</p>
+        <p> QTY : <input type="text" style="width: 50px;" value="1"> &nbsp;&nbsp;<button class="btn btn-primary" (click)="addtocart(product[0])"> Add to Cart</button></p>
+        <h5>{{product[0].category}}</h5>
+    </div>
+</div>
+            

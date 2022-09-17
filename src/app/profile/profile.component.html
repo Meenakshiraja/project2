@@ -1,0 +1,47 @@
+<div class="offset-md-3">
+<div class="card col-md-5">
+<form [formGroup]="customerdetail" (ngSubmit)="savedetail()">
+    <div class="row" style="text-align:center; display:block">
+        <h3>Profile</h3>
+    </div>
+  
+    <div class="row">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+        <span *ngIf="name && name.invalid && name.touched" class="error">
+          <span *ngIf="name?.errors?.['required']">Please enter your name</span>
+          <span *ngIf="name?.errors?.['pattern']">Name must be in string</span>
+      </span> 
+     </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>E-Mail</label>
+            <input type="text" class="form-control" formControlName="email">
+            <span *ngIf="email && email.invalid && email.touched" class="error">Please enter a valid email Id</span>
+        </div>
+</div>
+<br>
+    <div class="row">
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" (change)="onPasswordChange()">
+            <span *ngIf="password && password.invalid && password.touched" class="error">Please enter a valid password</span>
+        </div>
+</div>
+<br>
+    <div class="row">
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmpassword" (change)="onPasswordChange()">
+            <span *ngIf="confirm_password && confirm_password.invalid && confirm_password.touched" class="error">Please enter the password again.</span>
+            <span *ngIf="confirm_password.hasError('mismatch')" class="error">Password do not match.</span>
+        </div>
+</div>
+<br>
+</form>
+<button type="submit" [disabled]="customerdetail.invalid" (click)="savedetail()" class="btn btn-primary">Submit</button>
+</div>
+</div>

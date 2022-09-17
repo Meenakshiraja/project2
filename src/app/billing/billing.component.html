@@ -1,0 +1,73 @@
+<div class="progress" style="height: 5px;">
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+<div class="offset-md-3">
+    
+    <div class="card col-md-6">
+    <form [formGroup]="addressdetail" (ngSubmit)="savedetail()">
+        <div class="row" style="text-align:center; display:block">
+            <h3>Billing Address</h3>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <span *ngIf="name && name.invalid && name.touched" class="error">
+              <span *ngIf="name?.errors?.['required']">Please enter your name</span>
+              <span *ngIf="name?.errors?.['pattern']">Name must be in string</span>
+          </span> 
+         </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="form-group">
+                <label>E-Mail</label>
+                <input type="text" class="form-control" formControlName="email">
+                <span *ngIf="email && email.invalid && email.touched" class="error">Please enter a valid email Id</span>
+            </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" formControlName="address">
+            <span *ngIf="address && address.invalid && address.touched" class="error">Please enter an Address</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" formControlName="city">
+            <span *ngIf="city && city.invalid && city.touched" class="error">Please enter a City</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" formControlName="country">
+            <span *ngIf="country && country.invalid && country.touched" class="error">Please enter a Country</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Zip</label>
+            <input type="text" class="form-control" formControlName="zip">
+            <span *ngIf="zip && zip.invalid && zip.touched" class="error">Please enter Zip Code</span>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+            <label>Telephone</label>
+            <input type="text" class="form-control" formControlName="telephone">
+            <span *ngIf="telephone && telephone.invalid && telephone.touched" class="error">Please enter a Telephone</span>
+        </div>
+    </div>    
+    <br>
+    </form>
+    <button type="submit" [disabled]="addressdetail.invalid" (click)="savedetail()" class="btn btn-primary">Submit</button>
+    </div>
+    </div>

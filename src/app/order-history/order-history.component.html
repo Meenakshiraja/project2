@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body text-center">
+            <h4 style="text-align: left;"><b>Order History</b></h4>
+            <div class="table-responsive">
+                <table class="table" id="datatable">
+                <thead>
+                    <tr role="row">
+                        <th style="width:150px">Image</th>
+                        <th style="width:600px;">Name</th>
+                        <th style="width:200px;">Quantity</th>
+                        <th style="width:200px;">Order Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cartservice.order">
+                        <td style="width:150px"><img src={{item.image}} style="width: 100px; height: 100px;"></td>
+                        <td style="width:600px;"><h6>{{item.title}} </h6></td>
+                        <td style="width:200px;">{{item.quantity}}</td>
+                        <td style="width:200px;">{{item.id}}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>              
+    </div>
+    </div>
+</div>
