@@ -28,7 +28,7 @@
         <br><br>
         <h4>{{product[0].title}}</h4>
         <p><b><span style="font-size: 25px;">Rs. {{product[0].price}}</span></b>&nbsp;&nbsp; IN STOCK</p>
-        <p> QTY : <input type="text" style="width: 50px;" value="1"> &nbsp;&nbsp;<button class="btn btn-primary" (click)="addtocart(product[0])"> Add to Cart</button></p>
+        <p> QTY : <input type="text" style="width: 50px;" [(ngModel)]="product[0].quantity" (change)="cartservice.gettotalprice()"> &nbsp;&nbsp;<button class="btn btn-primary" (click)="addtocart(product[0])"> Add to Cart</button></p>
         <h5>{{product[0].category}}</h5>
     </div>
 </div>

@@ -14,8 +14,8 @@
                     <tr ><div *ngFor="let item of cart">
                         <td style="width:150px"><img src={{item.image}} style="width: 150px; height: 150px;"></td>
                         <td style="padding-top:50px ;width:500px"><h5>{{item.title}} <br> Rs. {{item.price}}</h5></td>
-                        <td style="width:100px"><button style="float:right; margin-top: 0px;" (click)="delete(item)"><i class="fa fa-close"></i></button>
-                        <br><br><input type="text" name="quantity" style="position:absolute; margin-bottom: 0%; width:40px; text-align: center;" [(ngModel)]="item.quantity" (change)="cartservice.gettotalprice()"></td> </div>
+                        <td style="width:100px"><button style="float:right; margin-top: 0px;" (click)="delete(item)"><i class="fa fa-trash"></i></button>
+                        <br><br><br><br><br><input type="text" name="quantity" style="position:absolute; margin-bottom: 0%; width:40px; text-align: center;" [(ngModel)]="item.quantity" (change)="cartservice.gettotalprice()"></td> </div>
                         <td><table class="table-responsive" id="amountcalc">
                             <tbody>
                                 <tr>

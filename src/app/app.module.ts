@@ -17,6 +17,8 @@ import { OrdersummaryComponent } from './ordersummary/ordersummary.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
     OrdersummaryComponent,
     ThankyouComponent,
     ProductviewComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

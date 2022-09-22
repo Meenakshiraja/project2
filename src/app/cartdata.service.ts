@@ -15,7 +15,7 @@ export class CartdataService {
       image:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61BSmqNVYPL._SL1500_.jpg",
       image1:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61fztnPzSfL._SL1500_.jpg",
       image2:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61opjtBWP7L._SL1500_.jpg",
-      category:"Men's Smartwatch",
+      category:"Smartwatch",
       quantity:1
     },
     {
@@ -25,7 +25,7 @@ export class CartdataService {
       image:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41OhhQHHupL.jpg",
       image1:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/613nYLT1ZwL._SL1500_.jpg",
       image2:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41Z6bdVL4AL._SL1500_.jpg",
-      category:"Lenovo Laptops",
+      category:"Laptops",
       quantity:1
     },
     {
@@ -65,7 +65,7 @@ export class CartdataService {
       image:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41zGMOmnVAL._SL1080_.jpg",
       image1:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51zISV19yBL._SL1080_.jpg",
       image2:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51k10vvut3L._SL1080_.jpg",
-      category:"Camera",
+      category:"Cameras",
       quantity:1
     }
   ];
@@ -76,8 +76,22 @@ export class CartdataService {
   totalprice:number=0;
 
   addtocart(event:any){
-    this.cart.push(event);
-    alert("Your product has been added to cart");
+    if (this.cart.length==0)
+    {
+      this.cart.push(event);
+      alert("Your product has been added to cart");
+    }
+    else{
+    for (let i = 0; i < this.cart.length; i++) {
+      if (this.cart[i].id == event.id) {
+          alert('This product is already in cart. Quantity is increased');
+          this.cart[i].quantity++;
+      }
+      else {
+        this.cart.push(event);
+        alert("Your product has been added to cart");
+      } 
+    }}
     this.totalitemnumber=this.cart.length;
     this.gettotalprice();
   }
@@ -91,6 +105,7 @@ export class CartdataService {
     }
   }
   delete(i:any){
+    if(confirm("Are you sure to delete this product?")){
     const items = this.cart.filter((item:any) => item.id === i.id);
     const index = this.cart.indexOf(items[0])
     if (index > -1) {
@@ -98,6 +113,7 @@ export class CartdataService {
     }
     this.totalitemnumber=this.cart.length;
     this.gettotalprice();
+  }
   }
 
   afterorder()

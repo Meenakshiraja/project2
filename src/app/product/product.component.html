@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <h4 class="offset-md-1">Categories</h4>
-          <button class="gradient offset-md-1" *ngFor="let category of categories">
+          <button class="gradient offset-md-1" *ngFor="let category of categories" (click)="categoryfil(category)">
             {{category}}
           </button>
     </div>
@@ -13,7 +13,7 @@
   
   <div class="container">
     <div class="row">
-      <ng-container *ngFor="let item of cartservice.productlist">
+      <ng-container *ngFor="let item of products">
       <div class="card col-md-3 offset-md-1">
         <img src="{{item.image}}" (click)="show(item.id)">
         <h5 class="item-title">{{item.title}}</h5>

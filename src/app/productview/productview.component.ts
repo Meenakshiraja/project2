@@ -11,7 +11,7 @@ export class ProductviewComponent implements OnInit {
 
   productlist:{id:number,title:string,category:string,image:string,image1:string,image2:string,price:number,quantity:number}[]=[];
   product:{id:number,title:string,category:string,image:string,image1:string,image2:string,price:number,quantity:number}[]=[];
-  constructor(private cartservice:CartdataService,private route:ActivatedRoute) { }
+  constructor(public cartservice:CartdataService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productlist=this.cartservice.productlist;
