@@ -1,3 +1,7 @@
+body
+{
+    min-height: 56vh;
+}
 .card{
     margin: 100px;
     padding:30px;
