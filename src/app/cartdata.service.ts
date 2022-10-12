@@ -76,21 +76,23 @@ export class CartdataService {
   totalprice:number=0;
 
   addtocart(event:any){
+    console.log(this.cart.length);
     if (this.cart.length==0)
     {
       this.cart.push(event);
-      alert("Your product has been added to cart");
+      alert("Your first product has been added to cart");
     }
     else{
+      let f=0;
     for (let i = 0; i < this.cart.length; i++) {
       if (this.cart[i].id == event.id) {
+          f=1;
           alert('This product is already in cart. Quantity is increased');
           this.cart[i].quantity++;
-      }
-      else {
-        this.cart.push(event);
-        alert("Your product has been added to cart");
       } 
+    }if(f==0) {
+      this.cart.push(event);
+      alert("Your product has been added to cart");
     }}
     this.totalitemnumber=this.cart.length;
     this.gettotalprice();
